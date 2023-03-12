@@ -1,0 +1,58 @@
+@use "/src/styles/base/variables" as variable;
+@use "/src/styles/mixins/layout" as layout;
+
+.chip {
+  @include layout.flex($align: center, $justify: center);
+  width: fit-content;
+  gap: 0.44rem;
+  padding: 0.28rem 0.44rem;
+  border-radius: variable.$rounded-full;
+  white-space: nowrap;
+
+  &.no-background {
+    background-color: #ffffff00 !important;
+  }
+
+  .indicator {
+    @include layout.flex($align: center, $justify: center);
+    background-color: currentColor;
+    width: 0.333rem;
+    height: 0.333rem;
+    border-radius: variable.$rounded-full;
+  }
+
+  &[data-status="200"] {
+    background-color: variable.$success-100;
+    color: variable.$success-500;
+  }
+  &[data-method="GET"] {
+    background-color: variable.$success-100;
+    color: variable.$success-500;
+  }
+
+  &[data-status="500"] {
+    background-color: variable.$warning-100;
+    color: variable.$warning-500;
+  }
+  &[data-method="POST"] {
+    background-color: variable.$warning-100;
+    color: variable.$warning-500;
+  }
+  &[data-method="PATCH"] {
+    background-color: variable.$warning-100;
+    color: variable.$warning-500;
+  }
+  &[data-method="PUT"] {
+    background-color: variable.$warning-100;
+    color: variable.$warning-500;
+  }
+
+  &[data-status="404"] {
+    background-color: variable.$error-100;
+    color: variable.$error-500;
+  }
+  &[data-status="DELETE"] {
+    background-color: variable.$error-100;
+    color: variable.$error-500;
+  }
+}

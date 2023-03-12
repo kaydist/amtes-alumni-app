@@ -1,0 +1,170 @@
+@use "/src/styles/mixins/layout.scss" as layout;
+@use "/src/styles/base/variables" as variable;
+
+.filled-btn {
+  @include layout.flex($align: center, $justify: center);
+  gap: 0.5rem;
+  white-space: nowrap;
+  padding: 0.44rem 0.89rem;
+  border-radius: variable.$input-radius;
+}
+
+.primary-btn-color {
+  background-color: variable.$stability-col;
+  color: white;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background-color: variable.$primary-col-600;
+  }
+
+  &:disabled {
+    background-color: variable.$grey-400;
+    cursor: not-allowed;
+  }
+
+  &[data-variant="outlined"] {
+    background-color: transparent;
+    outline: 1px solid variable.$primary-col;
+    color: variable.$primary-col;
+
+    &:hover {
+      color: variable.$white;
+      background-color: variable.$primary-col-600;
+    }
+  }
+
+  &[data-variant="underlined"] {
+    background-color: transparent;
+    border-bottom: 2px solid variable.$primary-col-500;
+    color: variable.$primary-col-500;
+    font-size: inherit;
+    padding: 0.44rem 0 0;
+    border-radius: 0;
+
+    &:disabled {
+      color: variable.$grey-400;
+      cursor: not-allowed;
+    }
+  }
+}
+
+.secondary-btn-color {
+  background-color: variable.$info-500;
+  color: white;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background-color: variable.$info-600;
+  }
+
+  &:disabled {
+    background-color: variable.$grey-400;
+    cursor: not-allowed;
+  }
+
+  &[data-variant="outlined"] {
+    background-color: transparent;
+    outline: 1px solid variable.$info-500;
+    color: variable.$info-500;
+
+    &:hover {
+      color: variable.$white;
+      background-color: variable.$info-600;
+    }
+  }
+
+  &[data-variant="underlined"] {
+    background-color: transparent;
+    border-bottom: 2px solid variable.$info-500;
+    color: variable.$info-500;
+    font-size: inherit;
+    padding: 0.44rem 0 0;
+    border-radius: 0;
+
+    &:disabled {
+      color: variable.$grey-400;
+      cursor: not-allowed;
+    }
+  }
+}
+
+.danger-btn-color {
+  background-color: variable.$error-500;
+  color: white;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background-color: variable.$error-600;
+  }
+
+  &:disabled {
+    background-color: variable.$grey-400;
+    cursor: not-allowed;
+  }
+
+  &[data-variant="outlined"] {
+    background-color: transparent;
+    outline: 1px solid variable.$error-500;
+    color: variable.$error-500;
+
+    &:hover {
+      color: variable.$white;
+      background-color: variable.$error-600;
+    }
+  }
+
+  &[data-variant="underlined"] {
+    background-color: transparent;
+    border-bottom: 2px solid variable.$error-500;
+    color: variable.$error-500;
+    font-size: inherit;
+    padding: 0.44rem 0 0;
+    border-radius: 0;
+
+    &:disabled {
+      color: variable.$grey-400;
+      cursor: not-allowed;
+    }
+  }
+}
+
+.purple-btn-color {
+  background-color: variable.$purple-col;
+  color: white;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background-color: variable.$purple-col;
+  }
+
+  &:disabled {
+    background-color: variable.$grey-400;
+    cursor: not-allowed;
+  }
+
+  &[data-variant="outlined"] {
+    background-color: transparent;
+    outline: 1px solid variable.$purple-col;
+    color: variable.$purple-col;
+
+    &:hover {
+      color: variable.$white;
+      background-color: variable.$purple-col;
+    }
+  }
+
+  &[data-variant="underlined"] {
+    background-color: transparent;
+    border-bottom: 2px solid variable.$purple-col;
+    color: variable.$purple-col;
+    font-size: inherit;
+    padding: 0.44rem 0 0;
+    border-radius: 0;
+
+    &:disabled {
+      color: variable.$grey-400;
+      cursor: not-allowed;
+    }
+  }
+}

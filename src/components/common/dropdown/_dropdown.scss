@@ -1,0 +1,52 @@
+@use "/src/styles/base/_variables.scss" as variable;
+@use "/src/styles/mixins/layout.scss" as layout;
+@use "/src/styles/mixins/breakpoints.scss" as breakpoint;
+
+.dropdown-menu-container {
+  position: relative;
+  width: fit-content;
+
+  .dropdown-menu {
+    position: absolute;
+    top: auto;
+    right: 0;
+    left: auto;
+    z-index: variable.$dropdown-index;
+    padding: 0.625rem 0;
+    min-width: 180px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-align: left;
+    list-style: none;
+    background-color: variable.$white;
+    background-clip: padding-box;
+    border-radius: variable.$card-radius;
+    -webkit-box-shadow: variable.$shadow-40;
+    box-shadow: variable.$shadow-40;
+    transform: scale(0);
+    transform-origin: top right;
+    transition: all 0.2s ease-in-out;
+
+    .dropdown-option {
+      padding: 0.5rem 1rem;
+      display: block;
+      white-space: nowrap;
+      text-decoration: none;
+      border-radius: variable.$card-radius;
+      cursor: pointer;
+
+      .icon {
+        margin-right: 0.5rem;
+        vertical-align: middle;
+      }
+
+      &:hover {
+        background-color: variable.$info-100;
+      }
+    }
+  }
+
+  .dropdown-menu.open {
+    transform: scale(1);
+  }
+}

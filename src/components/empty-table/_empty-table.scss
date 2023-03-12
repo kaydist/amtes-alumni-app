@@ -1,0 +1,25 @@
+@use "/src/styles/base/variables" as variable;
+
+.empty-table-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 250px;
+  text-align: center;
+
+  .illustration {
+    height: 100px;
+    width: auto;
+  }
+
+  .empty-table-message {
+    font-weight: 700;
+    margin-top: 1.33rem;
+  }
+  .empty-table-add-message {
+    font-weight: lighter;
+    margin-top: 0.44rem;
+    color: variable.$primary-col-300;
+  }
+}

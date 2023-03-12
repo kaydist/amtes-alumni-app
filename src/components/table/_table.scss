@@ -1,0 +1,138 @@
+@use "/src/styles/base/variables" as variable;
+@use "/src/styles/base/typography" as typography;
+@use "/src/styles/mixins/breakpoints" as breakpoints;
+@use "/src/styles/mixins/layout" as layout;
+
+.table-container {
+  .table-heading {
+    padding: 0 0 0.89rem;
+    @include layout.flex($align: center, $justify: space-between);
+
+    .title {
+      font-weight: bold;
+    }
+
+    .filter-btn {
+      background-color: variable.$info-100;
+      color: variable.$black;
+      @extend .xxs;
+
+      &:hover {
+        background-color: variable.$info-200;
+      }
+    }
+
+    & + hr {
+      border-top: 0.0567rem solid variable.$grey-100;
+      background-color: variable.$grey-100;
+      margin-bottom: 0.67rem;
+    }
+  }
+
+  table {
+    width: 100%;
+    @include breakpoints.media("<desktop") {
+      min-width: max-content;
+    }
+    text-align: left;
+    border-collapse: collapse;
+
+    thead {
+      background-color: variable.$grey-100;
+    }
+
+    tbody {
+      &[data-loading="true"] {
+        position: relative;
+        height: 100px;
+
+        .table-spinner {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+    }
+
+    &[data-rowicon="true"] {
+      th,
+      td {
+        &:nth-child(2) {
+          padding-left: 0;
+        }
+      }
+    }
+
+    th {
+      padding: 0.5rem 0;
+      font-weight: 400;
+      color: variable.$black;
+      padding-left: variable.$card-padding-left;
+      @extend .xxs;
+    }
+
+    .table-row {
+      border-bottom: 1px solid variable.$grey-100;
+      @extend .xs;
+
+      td {
+        padding: 0.889rem 0 0.889rem variable.$card-padding-left;
+        color: variable.$grey-700;
+
+        // &:nth-child(2) {
+        //   padding-left: 0;
+        // }
+      }
+
+      .table-row-icon {
+        padding: 0;
+      }
+
+      .table-more-field {
+        padding-right: 1.61rem;
+        text-align: right;
+        float: right;
+        vertical-align: middle;
+      }
+    }
+
+    .dropdown-menu {
+      transform-origin: top right;
+
+      &:last-child {
+        bottom: 0;
+        right: 50%;
+        transform-origin: bottom right;
+      }
+    }
+  }
+}
+
+.table-filter-dropdown {
+  @include layout.flex();
+  flex-direction: column;
+  row-gap: 0.89rem;
+  padding: 0.89rem !important; 
+
+  .input-container {
+    width: 100%;
+  }
+
+  .button-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 0.34rem;
+    width: 100%;
+  }
+}
+
+.card {
+  .table-container {
+    .table-wrapper {
+      // overflow-x: auto;
+      // overflow-y: visible;
+      max-width: 100%;
+    }
+  }
+}

@@ -1,0 +1,14 @@
+@use "../_common-input-styles" as input;
+@use "/src/styles/mixins/layout.scss" as layout;
+
+.pincode-input-container {
+  @include layout.flex($justify: center);
+
+  .pincode-input-text {
+    padding: 0 !important;
+    margin: 0 2px;
+    text-align: center;
+    @extend .input-field-container;
+    display: inline-block;
+  }
+}

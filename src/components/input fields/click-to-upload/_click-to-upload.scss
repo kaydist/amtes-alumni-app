@@ -1,0 +1,26 @@
+@use "/src/styles/base/variables" as variable;
+@use "/src/styles/mixins/layout" as layout;
+@use "../common-input-styles" as common-input;
+
+.click-to-upload-container {
+  input {
+    position: relative;
+  }
+
+  input:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: fit-content;
+    content: attr(data-placeholder);
+    background-color: common-input.$background-color;
+    padding: common-input.$input-top-padding;
+    color: common-input.$placeholder-color;
+    cursor: pointer;
+  }
+
+  &:focus-within input:after {
+    background-color: variable.$white;
+  }
+}

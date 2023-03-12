@@ -1,0 +1,57 @@
+@use "/src/styles/mixins/layout" as layout;
+@use "/src/styles/base/variables" as variable;
+
+.toggle-component-container {
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 2rem;
+    height: 1.11rem;
+  }
+
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: variable.$rounded-full;
+    background-color: variable.$grey-300;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+  }
+
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 0.667rem;
+    width: 0.667rem;
+    left: 0.22rem;
+    bottom: 0.22rem;
+    background-color: variable.$white;
+    border-radius: variable.$rounded-full;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+  }
+
+  input:checked + .slider {
+    background-color: variable.$primary-col-500;
+  }
+
+  input:focus + .slider {
+    box-shadow: 0 0 0 variable.$primary-col-500;
+  }
+
+  input:checked + .slider:before {
+    -webkit-transform: translateX(0.9rem);
+    -ms-transform: translateX(0.9rem);
+    transform: translateX(0.9rem);
+  }
+}

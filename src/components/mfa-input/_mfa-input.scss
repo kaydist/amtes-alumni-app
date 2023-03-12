@@ -1,0 +1,25 @@
+.mfa-modal {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .sub-heading {
+    font-size: 0.78rem;
+    margin-bottom: 0.67rem;
+  }
+
+  .mfa-button {
+    width: 100%;
+    display: flex;
+    margin-top: 1.45rem;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 0.44rem;
+
+    button {
+      margin-top: 0;
+      width: 100%;
+    }
+  }
+}

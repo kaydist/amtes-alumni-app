@@ -1,0 +1,11 @@
+@use "/src/styles/base/_variables.scss" as variable;
+
+.page-loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 450px;
+  color: variable.$primary-col;
+  text-align: center;
+}

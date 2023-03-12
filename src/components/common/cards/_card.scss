@@ -1,0 +1,27 @@
+@use "/src/styles/base/variables" as variable;
+@use "/src/styles/mixins/breakpoints" as breakpoint;
+
+.card {
+  background: #fff;
+  border-radius: variable.$card-radius;
+  border: 0.840603px solid;
+  border-color: variable.$primary-col-50;
+  padding: variable.$card-padding-top variable.$card-padding-left;
+
+  .card-title {
+    font-weight: bold;
+    margin-bottom: 1.11rem;
+
+    & + hr {
+      border-top: 0.0567rem solid variable.$grey-100;
+      background-color: variable.$grey-100;
+    }
+  }
+
+  @include breakpoint.media("<tablet") {
+    padding: 1.11rem 1.3rem;
+  }
+  @include breakpoint.media("<LGdesktop") {
+    padding: 1.33rem 1.4rem;
+  }
+}

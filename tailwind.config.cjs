@@ -1,0 +1,101 @@
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  theme: {
+    extend: {
+      colors: {
+        black: "#01060C",
+        white: "#ffffff",
+        primary: {
+          400: "#063E73",
+          300: "#0C7DE6",
+          200: "#063E73",
+          100: "#E7F2FD",
+        },
+
+        other: {
+          green: "#03B45F",
+          "light-green": "#D9F4E7",
+          teal: "#64D2FF",
+          "light-teal": "#D3F2FF",
+          red: "#F35F5F",
+          "light-red": "#FDE7E7",
+          orange: "#FFB800",
+          "light-orange": "#FEF2D5",
+          blue: "#1B67FB",
+          "light-blue": "#DDE8FE",
+        },
+
+        grey: {
+          600: "#2F3035",
+          500: "#54555B",
+          400: "#85868D",
+          300: "#B3B4BB",
+          200: "#D4D5DB",
+          100: "#F2F5F9",
+        },
+      },
+      fontSize: {
+        "2xs": "0.625rem",
+        xs: "0.75rem",
+        sm: "0.875rem",
+        base: "1rem",
+        lg: "1.125rem",
+        xl: "1.25rem",
+        "2xl": "1.3125rem",
+        "3xl": "1.5rem",
+        "4xl": "1.625rem",
+        "5xl": "2rem",
+        "6xl": "2.5rem",
+        "7xl": "3rem",
+        "8xl": "4rem",
+        "9xl": "5rem",
+      },
+      fontFamily: { satoshi: "Satoshi" },
+      boxShadow: {
+        "Shadow / 20%":
+          "0px 1px 3px 0px rgba(48,49,51,0.1), 0px 0px 1px 0px rgba(48,49,51,0.05)",
+        "Shadow / 40%":
+          "0px 2px 4px 0px rgba(48,49,51,0.1), 0px 0px 1px 0px rgba(48,49,51,0.05)",
+        "Shadow / 60%":
+          "0px 4px 8px 0px rgba(48,49,51,0.1), 0px 0px 1px 0px rgba(48,49,51,0.05)",
+        "Shadow / 80%":
+          "0px 8px 16px 0px rgba(48,49,51,0.1), 0px 0px 1px 0px rgba(48,49,51,0.05)",
+        "Shadow / 100%":
+          "0px 16px 24px 0px rgba(48,49,51,0.1), 0px 0px 1px 0px rgba(48,49,51,0.05)",
+        "Blur Overlay / 5%": "",
+        "Blur Overlay / 10%": "",
+        "Blur Overlay / 15%": "",
+        "Blur Overlay / 20%": "",
+      },
+      borderRadius: {
+        none: "0",
+        xs: "0.0625rem",
+        sm: "0.0833333358168602rem",
+        default: "0.1066666692495346rem",
+        lg: "0.11865942180156708rem",
+        xl: "0.125rem",
+        "2xl": "0.1666666716337204rem",
+        "3xl": "0.23731884360313416rem",
+        "4xl": "0.2499999850988388rem",
+        "5xl": "0.25rem",
+        "6xl": "0.3125rem",
+        "7xl": "0.34324371814727783rem",
+        "8xl": "0.35597825050354004rem",
+        "9xl": "0.375rem",
+        "10xl": "0.5rem",
+        "11xl": "0.625rem",
+        "12xl": "0.7119565010070801rem",
+        "13xl": "0.75rem",
+        "14xl": "0.8184176087379456rem",
+        "15xl": "0.9721149206161499rem",
+        "16xl": "1rem",
+        "17xl": "1.5rem",
+        "18xl": "3rem",
+        "19xl": "4.25rem",
+        full: "9999px",
+      },
+    },
+  },
+  plugins: [],
+};
