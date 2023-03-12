@@ -14,6 +14,7 @@ export interface InputProps {
   success?: boolean | string;
   successMessage?: string;
   errorMessage?: string;
+  inputInfo?: string | React.ReactElement;
   [rest: string]: any;
 }
 
@@ -29,6 +30,7 @@ const Input: React.FC<InputProps> = (props, _ref) => {
     error,
     errorMessage,
     successMessage,
+    inputInfo,
     success,
     ...rest
   } = props;
@@ -37,63 +39,74 @@ const Input: React.FC<InputProps> = (props, _ref) => {
   const [passwordType, setPasswordType] = useState(type);
 
   return (
-    <div className="border border-grey-300 focus-within:border-other-blue py-2 px-4 rounded-md relative">
-      {label && (
-        <label className="input-label">
-          {label}
-          {isRequired && <sup>*</sup>}
-        </label>
-      )}
-
-      <div
-        className={`${
-          (icon || type === "password") &&
-          (iconPosition === "left" ? "icon-left" : "icon-right")
-        } ${error && "input-error"} ${success && "input-success"}`}
-      >
-        <input
-          className={`border-0 focus:border-0 focus:outline-0 ${
-            icon || type === "password" ? "w-[92%]" : "w-full"
-          }`}
-          type={passwordType || "text"}
-          {...rest}
-        />
-
-        {type === "password" ? (
-          <span
-            className="absolute right-4 top-1/2 -translate-y-1/2"
-            onClick={() => {
-              if (type === "password") {
-                if (passwordVisible) {
-                  setPasswordVisisble(false);
-                  setPasswordType("password");
-                } else {
-                  setPasswordVisisble(true);
-                  setPasswordType("text");
-                }
-              }
-            }}
-          >
-            {passwordVisible ? <PasswordVisible /> : <PasswordHidden />}
-          </span>
-        ) : (
-          <span
-            className={`absolute right-4 top-1/2 -translate-y-1/2 ${
-              iconClassName ? iconClassName : ""
-            }`}
-            onClick={() => {
-              iconAction?.();
-            }}
-          >
-            {icon}
-          </span>
+    <div>
+      <div className="border border-grey-300 focus-within:border-other-blue py-2 px-4 rounded-md relative">
+        {label && (
+          <label className="input-label">
+            {label}
+            {isRequired && <sup>*</sup>}
+          </label>
         )}
+
+        <div
+          className={`${
+            (icon || type === "password") &&
+            (iconPosition === "left" ? "icon-left" : "icon-right")
+          } ${error && "input-error"} ${success && "input-success"}`}
+        >
+          <input
+            className={`border-0 focus:border-0 focus:outline-0 ${
+              icon || type === "password" ? "w-[92%]" : "w-full"
+            }`}
+            type={passwordType || "text"}
+            {...rest}
+          />
+
+          {type === "password" ? (
+            <span
+              className="absolute right-4 top-1/2 -translate-y-1/2"
+              onClick={() => {
+                if (type === "password") {
+                  if (passwordVisible) {
+                    setPasswordVisisble(false);
+                    setPasswordType("password");
+                  } else {
+                    setPasswordVisisble(true);
+                    setPasswordType("text");
+                  }
+                }
+              }}
+            >
+              {passwordVisible ? <PasswordVisible /> : <PasswordHidden />}
+            </span>
+          ) : (
+            <span
+              className={`absolute right-4 top-1/2 -translate-y-1/2 ${
+                iconClassName ? iconClassName : ""
+              }`}
+              onClick={() => {
+                iconAction?.();
+              }}
+            >
+              {icon}
+            </span>
+          )}
+        </div>
       </div>
 
-      {error && errorMessage && (
-        <label className="error-message">{errorMessage}</label>
-      )}
-      {success && <label className="success-message">{successMessage}</label>}
+      {error ||
+        success ||
+        (inputInfo && (
+          <div className="mt-2">
+            {error && errorMessage && (
+              <label className="error-message">{errorMessage}</label>
+            )}
+            {success && (
+              <label className="success-message">{successMessage}</label>
+            )}
+            {inputInfo && <label className="text-grey-600">{inputInfo}</label>}
+          </div>
+        ))}
     </div>
   );
 };
