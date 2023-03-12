@@ -2,11 +2,14 @@ import React from "react";
 import Button, { ButtonColor } from "~/components/common/buttons/button";
 import Input from "~/components/input fields/input/input";
 import CardAuthLayout from "~/layout/card-auth-layout";
+import { ReactComponent as BackIcon } from "~/assets/icons/arrow-back.svg";
 
 export default function ForgotPassword() {
   return (
     <CardAuthLayout>
-      <button className="mb-5">Back</button>
+      <button className="mb-5 p-2 rounded-md bg-other-light-blue">
+        <BackIcon />
+      </button>
 
       <div className="px-20 mb-20">
         <div className="text-center">
