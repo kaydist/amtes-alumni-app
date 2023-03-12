@@ -54,15 +54,7 @@ module.exports = {
       fontFamily: { satoshi: "Satoshi" },
       boxShadow: {
         "Shadow / 20%":
-          "0px 1px 3px 0px rgba(48,49,51,0.1), 0px 0px 1px 0px rgba(48,49,51,0.05)",
-        "Shadow / 40%":
-          "0px 2px 4px 0px rgba(48,49,51,0.1), 0px 0px 1px 0px rgba(48,49,51,0.05)",
-        "Shadow / 60%":
-          "0px 4px 8px 0px rgba(48,49,51,0.1), 0px 0px 1px 0px rgba(48,49,51,0.05)",
-        "Shadow / 80%":
-          "0px 8px 16px 0px rgba(48,49,51,0.1), 0px 0px 1px 0px rgba(48,49,51,0.05)",
-        "Shadow / 100%":
-          "0px 16px 24px 0px rgba(48,49,51,0.1), 0px 0px 1px 0px rgba(48,49,51,0.05)",
+          "0px -3px 24px rgba(12, 125, 230, 0.08), 0px 15px 20px rgba(12, 125, 230, 0.16)",
         "Blur Overlay / 5%": "",
         "Blur Overlay / 10%": "",
         "Blur Overlay / 15%": "",

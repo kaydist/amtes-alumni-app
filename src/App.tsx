@@ -15,7 +15,6 @@ function App() {
               return <Route key={idx} path={path} element={element} />;
             })}
           </Routes>
-          <SignInPage />
         </BrowserRouter>
       </React.Fragment>
     </div>
