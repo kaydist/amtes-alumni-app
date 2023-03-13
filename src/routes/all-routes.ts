@@ -1,6 +1,7 @@
 export const routes = {
     forgotPassword: {
-        index: '/forgot-password'
+        index: '/forgot-password',
+        sentMail: '/forgot-password/sent'
     },
     signup: {
         index: '/sign-up'
