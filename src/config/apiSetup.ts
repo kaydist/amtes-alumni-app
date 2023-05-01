@@ -7,8 +7,8 @@ const headers: any = {
 };
 
 const getToken = () =>
-  sessionStorage.getItem("adjutor-token")
-    ? sessionStorage.getItem("adjutor-token")
+  sessionStorage.getItem("amtes-token")
+    ? sessionStorage.getItem("amtes-token")
     : "";
 
 const instance = axios.create({
